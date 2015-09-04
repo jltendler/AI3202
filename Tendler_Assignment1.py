@@ -165,22 +165,26 @@ class MyGraph():
             
             
 	def addEdge(self, value1, value2):
-		if value1 in self.dictionary and value2 in self.dictionary: #ensure both vertices exist already
-
-			self.dictionary[value1].append(value2)
-			self.dictionary[value2].append(value1)
+		if value1==value2:
+			print "Erm, don't try to add a self-connected vertex here."
 		else:
-			print 'One or more vertices not found.'  #Both verticies don't exist.
+			if value1 in self.dictionary and value2 in self.dictionary: #ensure both vertices exist already
+
+				self.dictionary[value1].append(value2)
+				self.dictionary[value2].append(value1)
+			else:
+				print 'One or more vertices not found.'  #Both verticies don't exist.
             
             
 	def findVertex(self, value):
 		if value in self.dictionary:
-			for vertex in self.dictionary.keys(): #Jess showed you this from her 1300 class.
-				if vertex == value:
-					if not self.dictionary[vertex] :
-						print "vertex ", vertex, "is unconnected =("
+			
+			for item in self.dictionary.keys(): #Jess showed you this from her 1300 class.
+				if item == value: #found target vertex
+					if not self.dictionary[item] :
+						print "vertex ", item, "is unconnected =("
 					else:
-						print 'vertex ', vertex, 'connects to', self.dictionary[vertex]
+						print 'vertex ', item, 'connects to', self.dictionary[item]
 		else: 
 			print "Vertex doesn't exist in graph."
 print("*"*80)
@@ -217,6 +221,7 @@ graph.addEdge(6,10)
 graph.addEdge(6,8)
 graph.addEdge(10,9)
 graph.addEdge(10,8)
+#graph.addEdge(1,1)
 graph.findVertex(1)
 graph.findVertex(2)
 graph.findVertex(3)
