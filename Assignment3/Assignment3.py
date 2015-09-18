@@ -34,7 +34,7 @@ class Search():
 
 
 
-    def neighbors(self, currentPosition): #returns what you can get to from where you are.
+    def CheckSurrounding(self, currentPosition): #returns what you can get to from where you are.
         def Inbounds(xy):
             x=xy[0]
             y=xy[1]
@@ -112,7 +112,7 @@ class Search():
                 printer(self.end)
                 TheQ.get()[1] #Empty the Q to escape while loop.
 
-            for potentialNode in self.neighbors(currentNode):
+            for potentialNode in self.CheckSurrounding(currentNode):
                 newCost = costSoFar[currentNode] + self.cost(currentNode, potentialNode)
                 if potentialNode not in costSoFar or newCost < costSoFar[potentialNode]: #1. Haven't been there, 2. It's cheaper this way
                     costSoFar[potentialNode] = newCost
