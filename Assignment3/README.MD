@@ -1,4 +1,4 @@
-Called via "python Assignment3.py <TextFile> <heuristic#>
+Called via "python Assignment3.py [TextFile] [heuristic#]
 
 Heuristic takes input of either 1 or 2
 1=Manhattan
