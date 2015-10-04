@@ -2,6 +2,7 @@ import sys
 import math
 
 WorldFile=sys.argv[1]
+Eps=float(sys.argv[2])
 World=[]
 OpenedFile=open(WorldFile)
 
@@ -115,7 +116,6 @@ def DifferenceChecker():
             difference=abs((Matrix[i][j].U)-Matrix[i][j].UPrime)
             Gamma=.9**Matrix[i][j].GammaFactor
             OneMinus=1-Gamma
-            Eps=.5
             print(i,j)
             if (difference>(Eps*OneMinus)/Gamma):
                     NotGood+=1
@@ -166,4 +166,3 @@ for i in range(8):
 from pandas import *
 print DataFrame(DirectionMatrix)
 print DataFrame(UMatrix)
-
