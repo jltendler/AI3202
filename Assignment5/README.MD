@@ -15,8 +15,9 @@ I cannot find where my bug is that causes only a general trend and not an exact 
 
 
 Usage:
-  python Assignment5.py <World File>
+  python Assignment5.py <World File> <Epsilon>
 ex:
-  python Assignment5.py World1MDP.txt
+  python Assignment5.py World1MDP.txt <.5>
   
 
+As a result of my not completely functioning code I cannot adequately answer the question posed of changing epsilon. As you make epsilon smaller you must iterate additional times, however the data doesin this case does get any better and still only shows a general trend with a few places of nonsensical directions.
